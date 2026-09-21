@@ -10,4 +10,4 @@ if number > 5:
 elif number < 5 & number != 0:
     print("is less than 6 and not 0")
 elif number == 0:
-    print("is zero")
+    print("is 0")
