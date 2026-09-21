@@ -4,8 +4,8 @@ last_digit = abs(number) % 10
 
 print("Last digit of", number, "is", last_digit, "and", end=' ')
 if number > 5:
-    print("is greater than 5", end='')
+    print("is greater than 5")
 elif number < 5 & number != 0:
-    print("is less than 6 and not 0", end='')
+    print("is less than 6 and not 0")
 elif number == 0:
-    print("is zero", end='')
+    print("is zero")
