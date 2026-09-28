@@ -2,4 +2,6 @@
 
 
 class Square:
-    dict = {}
+    """This class is a square"""
+
+    pass
