@@ -62,7 +62,7 @@ class Square:
         voffset = "\n" * self.__position[0]
         hoffset = " " * self.__position[1]
 
-        print(voffset, end='')
+        print(voffset, end="")
         for i in range(self.__size):
             print(hoffset, end="")
             for j in range(self.__size):
