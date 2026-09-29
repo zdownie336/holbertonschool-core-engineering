@@ -1,4 +1,4 @@
-#!/usr.bin/env python3
+#!/usr/bin/env python3
 """Module Inheritance"""
 
 BaseGeometry = __import__('base_geometry').BaseGeometry
