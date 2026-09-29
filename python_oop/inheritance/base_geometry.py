@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
-
-
-class Errors(Exception):
-    pass
+"""module for the base geometyr class"""
 
 
 class BaseGeometry:
+    """Class for basic geometry"""
 
     def area(self):
-        raise Errors('area() not implemented')
+        raise Exception('area() not implemented')
 
     def integer_validator(self, name, value):
         if type(value) is not int:
