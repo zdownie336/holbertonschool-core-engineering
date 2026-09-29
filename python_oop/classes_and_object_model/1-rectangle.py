@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
+"""this module is used to define a class"""
 
 
 class Rectangle:
+    """this class is used to define the shape of a Rectangle"""
+
     def __init__(self, width=0, height=0):
         if type(width) is not int:
             raise TypeError('width must be an integer')
