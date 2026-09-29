@@ -9,7 +9,7 @@ class Rectangle:
         if type(width) is not int:
             raise TypeError('width must be an integer')
         elif width < 0:
-            raise ValueError('witdth must be >= 0')
+            raise ValueError('width must be >= 0')
 
         if type(height) is not int:
             raise TypeError('height must be an integer')
