@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Module for inheritance and polymorphism"""
 
-BaseGeometry = __import__('base_geometry').BaseGeometry
+Rectangle = __import__('2-rectangle').Rectangle
 
 
-class Square(BaseGeometry):
+class Square(Rectangle):
     """Class for inheritance with square"""
 
     def __init__(self, size):
