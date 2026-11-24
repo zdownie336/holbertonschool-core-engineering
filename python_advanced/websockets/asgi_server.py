@@ -8,21 +8,19 @@ from starlette.websockets import Websocket
 
 
 async def homepage(request):
-    # HTML response here
     return HTMLResponse('<h1>WebSocket Echo</h1>')
 
 
 async def websocket_endpoint(websocket):
     await websocket.accept()
-    # message loop here
-    while True:
-        try:
+    try:
+        while True:
             message = await websocket.receive_text()
             await websocket.send_text(message)
-        except WebSocketException:
-            print("Disconnected Socket")
-        finally:
-            await websocket.close()
+    except WebSocketException:
+        print("Disconnected Socket")
+    finally:
+        await websocket.close()
 
 app = Starlette(routes=[
     Route("/", homepage),
