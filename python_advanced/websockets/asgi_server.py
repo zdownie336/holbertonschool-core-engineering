@@ -3,8 +3,8 @@
 from starlette.applications import Starlette
 from starlette.responses import HTMLResponse
 from starlette.routing import Route, WebSocketRoute
+from starlette.websockets import WebSocket
 from starlette.exceptions import WebSocketException
-from starlette.websockets import Websocket
 
 
 async def homepage(request):
@@ -18,12 +18,14 @@ async def websocket_endpoint(websocket):
             data = await websocket.receive_text()
             await websocket.send_text(data)
     except WebSocketException:
-        print("Disconnected Socket")
+        print("Web Socket Disconnected")
     finally:
         await websocket.close()
 
-app = Starlette(routes=[
-    Route("/", homepage),
-    WebSocketRoute("/ws", websocket_endpoint),
-]
+
+app = Starlette(
+    routes=[
+        Route("/", homepage),
+        WebSocketRoute("/ws", websocket_endpoint),
+    ]
 )
