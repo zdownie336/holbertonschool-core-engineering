@@ -20,6 +20,7 @@ async def handler(websocket):
             print("Closed Connection")
             return
 
+
 async def main():
     server = await serve(handler, "", 8765)
     await server.serve_forever()
