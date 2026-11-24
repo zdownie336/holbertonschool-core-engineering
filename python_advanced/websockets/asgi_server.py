@@ -8,15 +8,15 @@ from starlette.websockets import Websocket
 
 
 async def homepage(request):
-    return HTMLResponse('<h1>WebSocket Echo</h1>')
+    return HTMLResponse("<h1>WebSocket Echo</h1>")
 
 
 async def websocket_endpoint(websocket):
     await websocket.accept()
     try:
         while True:
-            message = await websocket.receive_text()
-            await websocket.send_text(message)
+            data = await websocket.receive_text()
+            await websocket.send_text(data)
     except WebSocketException:
         print("Disconnected Socket")
     finally:
@@ -25,4 +25,5 @@ async def websocket_endpoint(websocket):
 app = Starlette(routes=[
     Route("/", homepage),
     WebSocketRoute("/ws", websocket_endpoint),
-])
+]
+)
